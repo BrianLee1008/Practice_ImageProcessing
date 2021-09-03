@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    android:background="@color/carculator_darkgray"
+    tools:context=".MainActivity">
+
+    <!--가로사이즈 비율을 1:1:1로 주어서 세개의 imageView가 균일하게 오게끔 constraintDimensionRatio-->
+    <!--constraintDimensionRatio의 인자값으로 W(H) 가 들어오는데 W의 경우 W사이즈 1 : H사이즈 3이란 뜻-->
+    <LinearLayout
+        android:id="@+id/firstRow"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="W,1:3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!--scaleType은 image의 실제 사이즈가 다 다르니 격차 해소를 위해 옵션을 주는 것. 사이즈에 딱 맞게 늘린건지 줄일건지.. 빈부부으로 냄길건지..-->
+        <ImageView
+            android:id="@+id/imageViewFirst"
+            android:scaleType="centerCrop"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/imageViewSecond"
+            android:scaleType="centerCrop"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/imageViewThird"
+            android:scaleType="centerCrop"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/secondRow"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="W,1:3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/firstRow">
+
+        <ImageView
+            android:id="@+id/imageViewFours"
+            android:scaleType="centerCrop"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/imageViewFifth"
+            android:scaleType="centerCrop"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/imageViewSixth"
+            android:scaleType="centerCrop"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ThirdRow"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="W,1:3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/secondRow">
+
+        <ImageView
+            android:id="@+id/imageViewSevens"
+            android:scaleType="centerCrop"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/imageViewEits"
+            android:scaleType="centerCrop"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/imageViewNines"
+            android:scaleType="centerCrop"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/startPhotoFrameButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="전자액자 실행하기"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/addPhotoButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="사진 추가하기"
+        app:layout_constraintBottom_toTopOf="@id/startPhotoFrameButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
